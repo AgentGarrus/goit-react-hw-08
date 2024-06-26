@@ -2,7 +2,6 @@ import RegistrationForm from '../components/RegistrationForm/RegistrationForm.js
 
 const RegistrationPage = () => (
   <div>
-    <h1>Register</h1>
     <RegistrationForm />
   </div>
 );

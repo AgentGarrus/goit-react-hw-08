@@ -1,7 +1,7 @@
 import { Outlet, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn, selectUser } from '../redux/auth/selectors.js';
-import { logout } from '../redux/auth/operations.js';
+import { logoutUser } from '../redux/auth/operations.js';
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ const Layout = () => {
   const user = useSelector(selectUser);
 
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(logoutUser());
   };
 
   return (

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { register } from '../../redux/auth/operations.js';
+import { signupUser } from '../../redux/auth/operations.js';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const RegistrationForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(register({ name, email, password }));
+    dispatch(signupUser({ name, email, password }));
   };
 
   return (
