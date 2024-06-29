@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { signupUser } from '../../redux/auth/operations.js';
+import './RegistrationForm.css';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -13,21 +14,33 @@ const RegistrationForm = () => {
     dispatch(signupUser({ name, email, password }));
   };
 
-  return (
+return (
     <form onSubmit={handleSubmit}>
       <label>
-        Name
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        <input
+          type="text"
+          value={name}
+          placeholder="Name"
+          onChange={(e) => setName(e.target.value)}
+        />
       </label>
       <label>
-        Email
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input
+          type="email"
+          value={email}
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </label>
       <label>
-        Password
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input
+          type="password"
+          value={password}
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </label>
-      <button type="submit">Register</button>
+      <button className='regform' type="submit">Register</button>
     </form>
   );
 };

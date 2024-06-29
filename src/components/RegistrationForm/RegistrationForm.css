@@ -1,0 +1,43 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+label {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+label input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border: 1px solid #020202;
+    border-radius: 4px;
+}
+
+label span {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #888;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+
+input:focus+span,
+input:not(:placeholder-shown)+span {
+    top: 0;
+    left: 10px;
+    font-size: 12px;
+    color: #333;
+}
+
+button:hover {
+    background-color: rgb(118, 253, 170);
+}
