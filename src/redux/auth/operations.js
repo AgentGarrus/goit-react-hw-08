@@ -6,6 +6,7 @@ axios.defaults.baseURL = 'https://connections-api.goit.global/';
 export const signupUser = createAsyncThunk('auth/signup', async (credentials, thunkAPI) => {
   try {
     const response = await axios.post('/users/signup', credentials);
+    axios.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);
