@@ -18,6 +18,10 @@ nav {
     padding: 10px 20px;
 }
 
+.homeleft {
+    margin-right: 20px;
+}
+
 nav a,
 nav span {
     color: black;

@@ -28,11 +28,11 @@
     margin: 0 auto;
     border: none;
     border-radius: 4px;
-    background-color: #d0d1d0;
+    background-color: #94f2ff;
     color: rgb(2, 2, 2);
     cursor: pointer;
 }
 
 .contact-form button:hover {
-    background-color: #797979;
+    background-color: rgb(118, 253, 170);
 }

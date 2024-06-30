@@ -18,14 +18,14 @@ const Layout = () => {
       <header>
         <nav>
           <div className="nav-left">
-            <Link to="/">Home</Link>
+            <Link to="/" className='homeleft'>Home</Link>
+            <Link to="/contacts">Contacts</Link>
           </div>
           <div className="nav-right">
             {isLoggedIn ? (
               <>
-                <Link to="/contacts">Contacts</Link>
-                <button onClick={handleLogout}>Logout</button>
                 <span>{user.name}</span>
+                <button onClick={handleLogout}>Logout</button>
               </>
             ) : (
               <>
