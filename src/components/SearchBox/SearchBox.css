@@ -9,7 +9,7 @@
 }
 
 .search-box input {
-    width: calc(100% - 16px);
+    width: 100%;
     padding: 8px;
     border: 1px solid #888888;
     border-radius: 4px;

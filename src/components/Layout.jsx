@@ -19,7 +19,9 @@ const Layout = () => {
         <nav>
           <div className="nav-left">
             <Link to="/" className='homeleft'>Home</Link>
-            <Link to="/contacts">Contacts</Link>
+            {isLoggedIn && (
+              <Link to="/contacts" className='homeleft'>Contacts</Link>
+            )}
           </div>
           <div className="nav-right">
             {isLoggedIn ? (
