@@ -1,0 +1,11 @@
+.nav-left {
+    display: flex;
+    margin-left: 20px;
+    gap: 15px;
+}
+
+.homeleft {
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+}

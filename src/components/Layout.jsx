@@ -1,43 +1,10 @@
-import { Outlet, Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoggedIn, selectUser } from '../redux/auth/selectors.js';
-import { logoutUser } from '../redux/auth/operations.js';
-import './Layout.css';
+import { Outlet } from 'react-router-dom';
+import AppBar from './AppBar/AppBar';
 
 const Layout = () => {
-  const dispatch = useDispatch();
-  const isLoggedIn = useSelector(selectIsLoggedIn);
-  const user = useSelector(selectUser);
-
-  const handleLogout = () => {
-    dispatch(logoutUser());
-  };
-
   return (
     <div>
-      <header>
-        <nav>
-          <div className="nav-left">
-            <Link to="/" className='homeleft'>Home</Link>
-            {isLoggedIn && (
-              <Link to="/contacts" className='homeleft'>Contacts</Link>
-            )}
-          </div>
-          <div className="nav-right">
-            {isLoggedIn ? (
-              <>
-                <span>{user.name}</span>
-                <button onClick={handleLogout}>Logout</button>
-              </>
-            ) : (
-              <>
-                <Link to="/login">Login</Link>
-                <Link to="/register">Register</Link>
-              </>
-            )}
-          </div>
-        </nav>
-      </header>
+      <AppBar />
       <main>
         <Outlet />
       </main>

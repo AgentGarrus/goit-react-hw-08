@@ -1,0 +1,11 @@
+.authnavi {
+    margin-right: 20px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.log {
+    margin-right: 20px;
+}

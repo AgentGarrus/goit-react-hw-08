@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { fetchCurrentUser } from './redux/auth/operations.js';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { refreshUser, logoutUser } from './redux/auth/operations.js';
 import { selectIsRefreshing } from './redux/auth/selectors.js';
 import PrivateRoute from './components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
@@ -16,8 +16,12 @@ const App = () => {
   const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
-    dispatch(fetchCurrentUser());
+    dispatch(refreshUser());
   }, [dispatch]);
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+  };
 
   if (isRefreshing) {
     return <p>Loading...</p>;
@@ -26,11 +30,12 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout />}>
+         <Route path="/" element={<Layout handleLogout={handleLogout} />}>
           <Route index element={<HomePage />} />
           <Route path="/register" element={<RestrictedRoute redirectTo="/contacts" component={<RegistrationPage />} />} />
           <Route path="/login" element={<RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />} />
           <Route path="/contacts" element={<PrivateRoute redirectTo="/login" component={<ContactsPage />} />} />
+          <Route path="/logout" element={<Navigate to="/" />} />
         </Route>
       </Routes>
     </Router>

@@ -1,0 +1,12 @@
+.loggingoutuser {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 50px;
+    margin-right: 20px;
+}
+
+.nameu {
+    font-weight: 700;
+    color: rgb(196, 8, 8);
+}
